@@ -7,12 +7,17 @@
 //
 
 import UIKit
-
+import WebKit
+let webView = WKWebView()
 class ViewController: UIViewController {
-
+    @IBOutlet weak var webview: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = URL(string: "http://192.168.0.12:8080/perix_voc/index.jsp")
+        webview.load(URLRequest(url: url!))
     }
 
     override func didReceiveMemoryWarning() {
